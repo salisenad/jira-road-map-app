@@ -1,0 +1,34 @@
+<div (click)="openDialog()" class="container">
+  <div
+    [ngStyle]="{
+        position: 'absolute',
+        left: distanceFromMinDueDate + 'px',
+        width: getCardWidth(card) + 'px',
+        top: getTopMargin(card) + 'px'
+        }"
+    class="card"
+  >
+    <div [matTooltip]="'Due Date'" class="duedate">{{ card.fields.duedate | date }}</div>
+    <div class="card-content">
+      <div class="chip-container">
+        <div
+          *ngFor="let item of card.fields.labels"
+          [matTooltip]="item"
+          [ngStyle]="{'background-color': getBackgroundColor(item)}"
+          class="chip-color"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="card-header">
+      {{ card.fields.project.name }} ({{ card.key }})
+      <div class="icons">
+        <img  [src]="card.fields.issuetype.iconUrl"
+          [matTooltip]="card.fields.issuetype.name"
+          class="avatar-issue"
+        />
+        <span class="material-icons link-icon">link</span>
+      </div>
+    </div>
+  </div>
+</div>

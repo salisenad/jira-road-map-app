@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+  box-sizing: border-box;
+  margin: 5px 2px 5px 2px;
+  cursor: pointer;
+}
+
+.card {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  border-radius: 1px;
+  user-select: none;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+
+
+  .duedate {
+    width: 90px;
+    background-color: #f4f5f7;
+    padding: 2px 2px;
+    border: 1px solid rgba(154, 205, 50, 0.1);
+    border-radius: 2px;
+  }
+
+  .card-header {
+    display: flex;
+    padding: 0 5px;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background-color: #f4f5f7;
+
+    &:hover {
+      background-color:  #e8e8e8;
+    }
+    &:active {
+      background-color:  #e8e8e8;
+    }
+    .link-icon {
+      font-size: medium;
+    }
+  }
+}
+
+.chip-container {
+  display: flex;
+  flex-direction: row;
+
+  .chip-color {
+    width: 65px;
+    height: 5px;
+    margin: 1px 1px;
+  }
+}
+
+.icons {
+  display: flex;
+}
+
